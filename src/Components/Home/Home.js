@@ -9,7 +9,7 @@ import { faPlayCircle, faChevronCircleDown} from "@fortawesome/free-solid-svg-ic
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import AboutBG from "../../assets/AboutBG.png";
 import {Link} from 'react-router-dom';
-
+import Carousel from '../Snippets/Carousel';
 
 export default function Home() {
     const [modal, setModal] = useState(false);
@@ -96,12 +96,23 @@ padding-bottm:50px;
 
                         </div>
                     </div>
+                    
+                    </AboutWrapper>
                     <ViewMoreDiv>
                                 <Link to ="/">View More . . .</Link>
                             </ViewMoreDiv>
-                    </AboutWrapper>
               </Container>
           </AboutSection>
+          <ProductSection>
+          <Container>
+          <ProductHeader>Our Products
+            <hr/>
+              </ProductHeader>
+              <Carousel/>
+          </Container>
+
+          
+          </ProductSection>
         </React.Fragment>
     )
 }
@@ -192,7 +203,7 @@ font-weight:bold;
 const NextButton = styled.button `
 background:transparent;
 color:white;
-font-size:24px;
+font-size:32px;
 outline: 0;
     border: none;
     -moz-outline-style: none;
@@ -205,11 +216,18 @@ display:flex;
 `
 const AboutWrapper = styled.div `
 padding-left:15px;
-padding-rigght:15px;
+padding-right:15px;
 `
 const AboutHeader = styled.div `
 font-size:45px;
-color:var(--mainOrange);
+color:var(--mainBlack);
+font-weight:bold;
+display:block;
+margin-bottom:45px;
+`
+const ProductHeader = styled.div `
+font-size:45px;
+color:var(--mainBlack);
 font-weight:bold;
 display:block;
 margin-bottom:45px;
@@ -220,8 +238,8 @@ font-weight:bold;
 `
 const RightAboutSubHeading = styled.div `
 font-size:15px;
-margin-top:10px;
-font-weiht:bold;
+margin-top:20px;
+
 `
 const ViewMoreDiv = styled.div `
 text-align:right;
@@ -234,4 +252,9 @@ a:hover{
     color:var(--mainOrange);
     text-decoration:none;
 }
+`
+const ProductSection= styled.div `
+background-color:var(--mainAsh);
+height:1000px;
+display:flex;
 `
