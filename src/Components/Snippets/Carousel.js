@@ -7,6 +7,7 @@ import YuasaImg from "../../assets/YuasaImg.png";
 import YuasLogo from "../../assets/Yuasa.png";
 import Desktop from "../../assets/desktop.png";
 import BeForwardImg from "../../assets/BeForwardImage.png";
+import MedageImg from "../../assets/MedageImage.png";
 import BeForwardLogo from "../../assets/BeForward.png";
 import styled from "styled-components";
 import {Link} from 'react-router-dom'
@@ -18,7 +19,7 @@ export default function Carousel() {
         items="1"
         loop
         autoplay
-        className="d-lg-block d-lg-block d-lg-block d-lg-block">
+        className="d-lg-block d-xl-block d-md-block">
         {/* <div className="item">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-6">
@@ -44,6 +45,7 @@ export default function Carousel() {
                             </ViewMoreDiv>
         </div> */}
         <div className="item">
+        <ProductSection>
         <DigitradSection>
         <DigitradLogo src={Digitrad} alt="Digitrad Logo" />
         <ProductText>
@@ -58,12 +60,13 @@ export default function Carousel() {
           <ProductBanner src={Desktop} alt="Digitrad"/>
           </ProductImageSec>
           <ViewMoreDiv>
-            <Link to ="/">Learn More . . .</Link>
+            <Link to ="/">Learn More</Link>
         </ViewMoreDiv>
+        </ProductSection>
         </div>
         
         <div className="item">
-        <BeforwardSection>
+        <ProductSection>        <BeforwardSection>
         <BeforwardLogo src={BeForwardLogo} alt="Beforward Logo" />
         <ProductText>
         Best of Auto-Deals Available  for You Anytime. 
@@ -77,10 +80,12 @@ export default function Carousel() {
         </ProductImageSec>
           
           <ViewMoreDiv>
-            <Link to ="/">Learn More . . .</Link>
+            <Link to ="/">Learn More</Link>
         </ViewMoreDiv>
+        </ProductSection>
         </div>
         <div className="item">
+        <ProductSection>
         <YuasaSection>
         <YuasaLogo src={YuasLogo} alt="Yuasa Logo" />
         <ProductText>
@@ -96,14 +101,32 @@ export default function Carousel() {
         </ProductImageSec>
           
           <ViewMoreDiv>
-            <Link to ="/">Learn More . . .</Link>
+            <Link to ="/">Learn More</Link>
         </ViewMoreDiv>
+        </ProductSection>
+        </div>
+        <div className="item">
+        
+        <MedageSection>
+        <img src={MedageImg} alt="Medage"/>
+        <Overlay>
+            Coming Soon
+        </Overlay>
+        </MedageSection>
+        
+        
+          
+          
+        
         </div>
       </OwlCarousel>
     </React.Fragment>
   );
 }
 
+const ProductSection = styled.div `
+height:800px;
+`
 const DigitradLogo = styled.img`
 width:300px
  
@@ -134,11 +157,14 @@ text-align:right;
 margin-top:30px;
 a{
     font-size:20px;
-    color:black;
+    color:var(--mainOrange);
+    font-weight:bold;
+    border-bottom: 1px solid var(--mainOrange)
 }
 a:hover{
-    color:var(--mainOrange);
+    color:var(--mainBlack);
     text-decoration:none;
+    border-bottom: 1px solid var(--mainBlack)
 }
 `
 const BeforwardSection = styled.div `
@@ -146,6 +172,7 @@ width:400px;
 height:300px;
 margin-left:auto;
 `
+
 const YuasaSection = styled.div `
 width:400px;
 height:300px;
@@ -160,3 +187,39 @@ const ProductBanner = styled.img `
 width:800px!important;
 margin:auto!important;
 `
+const MedageSection =styled.div `
+height:800px;
+display:flex;
+align-items:center;
+text-align:center;
+justify-content:center;
+img{
+    width:800px;
+    margin:auto;
+    opacity:0.4;
+}
+`
+const Overlay = styled.div `
+position:absolute;
+z-index:5;
+background-color:rgba(0, 0, 0, 0.8);
+border-radius:5px;
+color:var(--mainOrange);
+text-align:center;
+height:70px;
+width:400px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+`
+// const BackgroundOverlay = styled.div`
+//   background: rgba(0, 0, 0, 1);
+//   opacity: 0.10;
+//   position: absolute;
+//   bottom: 0;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+ 
+// `;
