@@ -14,7 +14,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 export default function Header() {
   const [background, setBackground] = useState("rgba(0, 0, 0, 0.5)");
   const [mailPadding, setMailPadding]=useState(20)
-  const [mailPaddingRight, setMailPaddingRight]=useState(50)
+
   const [fixed, setFixed] = useState("initial");
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
@@ -32,11 +32,11 @@ export default function Header() {
     if (window.pageYOffset >= 100) {
       setFixed("fixed");
       setMailPadding(105)
-      setMailPaddingRight(39)
+     
     } else {
       setFixed("initial");
-      setMailPadding(20)
-      setMailPaddingRight(50)
+      setMailPadding(20) 
+     
     }
   };
   window.addEventListener("scroll", handleScroll);
@@ -190,8 +190,11 @@ export default function Header() {
       </StyledNavbar>
      
     </NavWrapper>
-    <MailContainer fixed={fixed} padding={mailPadding} paddingRight={mailPaddingRight}>
-        <Link to ="/"><img src={Email} alt="standage email"/></Link>
+    <MailContainer fixed={fixed} padding={mailPadding}>
+    <Container>
+    <Link to ="/"><img src={Email} alt="standage email"/></Link>
+    </Container>
+        
     </MailContainer>
     </React.Fragment>
 
@@ -215,6 +218,12 @@ const NavWrapper = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
   }
 `;
+const Container = styled.div `
+@media(min-width:1200px){
+  width:1100px;
+  margin:auto;
+}
+`
 const LogoContainer = styled.div`
   ${'' /* img {
     width: 150px;
@@ -318,12 +327,6 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
 const MailContainer = styled.div `
 position: ${(props) => props.fixed} !important;
 padding-top:${(props)=> props.padding}px!important;
-padding-right:${(props)=> props.paddingRight}px!important;
-@media(min-width:1200px){
-  width:1200px;
-  margin:auto;
-  text-align:right;
-  
-}
-
+text-align:right;
+width:100%;
 `

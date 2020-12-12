@@ -5,11 +5,11 @@ import {Route, Switch} from 'react-router-dom';
 
 function App() {
   return (
-   <React.Fragment>
+   <div className="App">
      <Switch>
        <Route component={Home} path="/"/>
      </Switch>
-   </React.Fragment>
+   </div>
   );
 }
 

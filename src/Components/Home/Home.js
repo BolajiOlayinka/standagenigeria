@@ -1,17 +1,107 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Banner from '../../assets/Pepper.png';
-import styled from 'styled-components';
+import Team from '../../assets/Team.png';
+import styled, { keyframes }from 'styled-components';
+import { bounce } from 'react-animations';
 import Header from '../Header';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlayCircle, faChevronCircleDown} from "@fortawesome/free-solid-svg-icons";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
+import AboutBG from "../../assets/AboutBG.png";
+import {Link} from 'react-router-dom';
+
 
 export default function Home() {
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
+    const bounceAnimation = keyframes`${bounce}`;
+    const NextSection = styled.div`
+  animation: 5s infinite ${bounceAnimation};
+  text-align:center;
+background-color:transparent;
+padding-bottm:50px;
+`;
     return (
         <React.Fragment>
            <BannerUnderlay>
+          
             <Header/>
+            <Container>
+
+            <BannerSection>
+            {/* <BackgroundOverlay /> */}
+                <BannerHeading>
+                Enrich all regions of the world through the creation of innovative businesses
+                </BannerHeading>
+                <BannerSubHeading>
+                Creating decentralized solutions to bridge the gap between high-quality Japanese products and the growth economies they offer
+                </BannerSubHeading>
+                <PlayButton onClick={toggle}>
+                Who are we ...
+            <FontAwesomeIcon className="ml-4" icon={faPlayCircle} /> 
+            
+          </PlayButton>
+          <Modal isOpen={modal} toggle={toggle}>
+            <ModalHeader toggle={toggle}></ModalHeader>
+            <ModalBody>
+              <div
+                className="video"
+                style={{
+                  position: "relative",
+                  paddingBottom: "56.25%" /* 16:9 */,
+                  paddingTop: 25,
+                  height: 0,
+                }}
+              >
+                <iframe
+                  title="youtube"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src="https://www.youtube.com/embed/TnR9O-d8nhY?autoplay=1&mute=1"
+                  frameBorder="0"
+                />
+              </div>
+            </ModalBody>
+          </Modal>
+            </BannerSection>
+            <NextSection><NextButton><FontAwesomeIcon icon={faChevronCircleDown} /> </NextButton></NextSection>
+            </Container>
+            
            </BannerUnderlay>
-           <BannerUnderlay>
-               
-           </BannerUnderlay>
+          <AboutSection>
+              <Container>
+             
+              <AboutWrapper>
+              <AboutHeader>About Us
+              <hr/>
+              </AboutHeader>
+                    <div className="row align-items-center">
+                        <div className="col-lg-6 col-md-6">
+                        <img src={Team} alt="Standage Team"/>
+                        </div>
+                        <div className="col-lg-6 col-md-6">
+                            <RightAboutHeading>
+                            We make Quality Japanese Products Available Wherever in the World.
+                            </RightAboutHeading>
+                            <RightAboutSubHeading>
+                            STANDAGE.inc is a Japan based technology company established 2017. We provide digital platform to
+                             international trading businesses & Importation of Japanese Products Across the World.
+                            </RightAboutSubHeading>
+                            
+
+                        </div>
+                    </div>
+                    <ViewMoreDiv>
+                                <Link to ="/">View More . . .</Link>
+                            </ViewMoreDiv>
+                    </AboutWrapper>
+              </Container>
+          </AboutSection>
         </React.Fragment>
     )
 }
@@ -20,6 +110,128 @@ const BannerUnderlay = styled.div `
 background-image:url(${Banner});
 background-size:cover;
 background-repeat:no-repeat;
-height:800px;
+height:600px;
+overflow:hidden;
 padding-top:47px;
+
+`
+// const BackgroundOverlay = styled.div`
+//   background: rgba(0, 0, 0, 0.8);
+//   opacity: 0.25;
+//   position: absolute;
+//   bottom: 0;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// `;
+const Container = styled.div `
+@media(min-width:1200px){
+    width:1100px;
+    margin:auto;
+}
+`
+
+const BannerSection = styled.div `
+width:600px;
+`
+const BannerHeading = styled.div `
+font-size:40px;
+line-height:54px;
+font-weight:bold;
+color:white;
+margin-top:20px;
+`
+const BannerSubHeading = styled.div `
+font-size:18px;
+font-weight:400;
+line-height:28px;
+color:white;
+margin-top:10px;
+animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+`
+const PlayButton = styled.button`
+background-color: #f8951d;
+color: white;
+border: none;
+width:324px;
+height:81px;
+margin-bottom: 2%;
+font-size:24px;
+font-weight:bold;
+:active{
+    outline: 0;
+    border: none;
+    -moz-outline-style: none;
+  }
+  :focus {
+    outline: 0;
+    border: none;
+    -moz-outline-style: none;
+  }
+@media (min-width: 1200px) {
+
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 55px;
+  padding: 8px 28px;
+}
+@media (min-width: 991px) and (max-width: 1199.9px) {
+  margin-bottom: 25px;
+  padding: 10px 24px;
+}
+@media (min-width: 576px) and (max-width: 990.9px) {
+  margin-bottom: 25px;
+  padding: 10px 24px;
+}
+@media (max-width: 576.1px) {
+  display: none;
+}
+`;
+const NextButton = styled.button `
+background:transparent;
+color:white;
+font-size:24px;
+outline: 0;
+    border: none;
+    -moz-outline-style: none;
+`
+const AboutSection = styled.div `
+background-image:url(${AboutBG});
+height:720px;
+display:flex;
+
+`
+const AboutWrapper = styled.div `
+padding-left:15px;
+padding-rigght:15px;
+`
+const AboutHeader = styled.div `
+font-size:45px;
+color:var(--mainOrange);
+font-weight:bold;
+display:block;
+margin-bottom:45px;
+`
+const RightAboutHeading = styled.div `
+font-size:30px;
+font-weight:bold;
+`
+const RightAboutSubHeading = styled.div `
+font-size:15px;
+margin-top:10px;
+font-weiht:bold;
+`
+const ViewMoreDiv = styled.div `
+text-align:right;
+margin-top:30px;
+a{
+    font-size:20px;
+    color:black;
+}
+a:hover{
+    color:var(--mainOrange);
+    text-decoration:none;
+}
 `
