@@ -19,6 +19,7 @@ export default function Carousel() {
         items="1"
         loop
         autoplay
+        dots
         className="d-lg-block d-xl-block d-md-block">
         {/* <div className="item">
           <div className="row align-items-center">

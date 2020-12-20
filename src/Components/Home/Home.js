@@ -14,7 +14,8 @@ import AboutBG from "../../assets/AboutBG.png";
 import { Link } from "react-router-dom";
 import Carousel from "../Snippets/Carousel";
 import News from './HomeNews';
-
+import Dave from '../../assets/Dave.png';
+import Map from '../../assets/Map.png';
 
 export default function Home() {
   const [modal, setModal] = useState(false);
@@ -121,7 +122,41 @@ export default function Home() {
       </ProductSection>
       <Container>
           <News/>
+         
       </Container>
+      <MapSection>
+          <img src={Map} alt="Nigerian Map"/>
+      </MapSection>
+      <CEO>
+<BackgroundOne>
+<Container>
+<TeamHeader>
+  Our Team
+  <hr/>
+</TeamHeader>
+<TeamRow>
+<CEOText>
+      <CEOName>
+            Dave Gabriel
+      </CEOName>
+      <CEOTitle>
+            C.E.O 
+      </CEOTitle>
+      <CEOQuote>
+        We are here to present the kind of Trading experience never witnessed in Nigeria. Watch out for the space !!!
+      </CEOQuote>
+</CEOText>
+<CEOimg>
+<img src={Dave} alt="Dave Gabriel"/>
+</CEOimg>
+</TeamRow>
+</Container>
+
+</BackgroundOne>
+<BackgroundTwo>
+
+</BackgroundTwo>
+</CEO>
     </React.Fragment>
   );
 }
@@ -263,3 +298,66 @@ const ProductSection = styled.div`
   height: 1000px;
   display: flex;
 `;
+const MapSection = styled.div `
+height:650px;
+overflow:hidden;
+
+img{
+  width:100%;
+  
+}
+@media(min-width:1400px){
+  height:800px;
+}
+@media(min-width:2000px){
+  height:1000px;
+}
+
+`
+const CEO = styled.div `
+
+`
+const BackgroundOne = styled.div `
+height:500px;
+background-color:var(--mainAsh)
+`
+const BackgroundTwo = styled.div `
+height:230px;
+background-color:black;
+`
+const TeamHeader = styled.div`
+  font-size: 45px;
+  color: var(--mainBlack);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 45px;
+  text-align:right;
+`;
+const TeamRow = styled.div `
+display:flex;
+align-items:center;
+`
+const CEOText = styled.div `
+
+`
+const CEOName = styled.div `
+font-size:30px;
+font-weight:bold;
+`
+const CEOTitle = styled.div `
+font-size:24px;
+font-weight:bold;
+color:var(--mainOrange);
+padding-bottom:40px;
+`
+const CEOQuote = styled.div `
+width:530px;
+height:200px;
+font-size:22px;
+font-weight:bold;
+`
+const CEOimg = styled.div `
+img{
+width:450px;
+}
+`

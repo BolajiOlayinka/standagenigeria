@@ -14,7 +14,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 export default function Header() {
   const [background, setBackground] = useState("rgba(0, 0, 0, 0.5)");
   const [mailPadding, setMailPadding]=useState(20)
-
+  const [display, setDisplay] = useState("flex");
   const [fixed, setFixed] = useState("initial");
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
@@ -39,8 +39,19 @@ export default function Header() {
      
     }
   };
+  const ScrollDisplay = () => {
+    if (window.pageYOffset >= 1500) {
+      setDisplay("none");
+     
+    } else {
+      setDisplay("flex");
+    
+     
+    }
+  };
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("scroll", fixedScroll);
+  window.addEventListener("scroll", ScrollDisplay);
 
   const toggle = (e) => {
     setShowItem(!showItem, e);
@@ -50,7 +61,7 @@ export default function Header() {
 
   return (
     <React.Fragment>
-        <NavWrapper background={background} fixed={fixed}>
+        <NavWrapper background={background} fixed={fixed} display={display}>
       <StyledNavbar expand="sm">
         <div onClick={toggle} style={{ marginRight: "38px" }}>
           {showIcon ? (
@@ -190,7 +201,7 @@ export default function Header() {
       </StyledNavbar>
      
     </NavWrapper>
-    <MailContainer fixed={fixed} padding={mailPadding}>
+    <MailContainer fixed={fixed} padding={mailPadding} display={display}>
     <Container>
     <Link to ="/"><img src={Email} alt="standage email"/></Link>
     </Container>
@@ -203,7 +214,7 @@ export default function Header() {
 
 const NavWrapper = styled.div`
   z-index: 12;
-  display: flex;
+  display: ${(props) => props.display} !important;
   flex: auto;
   align-items: center;
   position: ${(props) => props.fixed} !important;
@@ -327,6 +338,7 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
 const MailContainer = styled.div `
 position: ${(props) => props.fixed} !important;
 padding-top:${(props)=> props.padding}px!important;
+display: ${(props) => props.display} !important;
 text-align:right;
 width:100%;
 `
