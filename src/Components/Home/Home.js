@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Banner from "../../assets/Pepper.png";
+// import Banner from "../../assets/Pepper.png";
+import Bus from "../../assets/Bus.png";
 import Team from "../../assets/Team.png";
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
@@ -162,7 +163,7 @@ export default function Home() {
 }
 
 const BannerUnderlay = styled.div`
-  background-image: url(${Banner});
+  background-image: url(${Bus});
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
