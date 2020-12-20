@@ -40,7 +40,7 @@ export default function Header() {
     }
   };
   const ScrollDisplay = () => {
-    if (window.pageYOffset >= 1500) {
+    if (window.pageYOffset >= 1300) {
       setDisplay("none");
      
     } else {

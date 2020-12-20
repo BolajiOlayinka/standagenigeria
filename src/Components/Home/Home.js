@@ -14,9 +14,9 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import AboutBG from "../../assets/AboutBG.png";
 import { Link } from "react-router-dom";
 import Carousel from "../Snippets/Carousel";
-import News from './HomeNews';
 import Dave from '../../assets/Dave.png';
 import Map from '../../assets/Map.png';
+import News from './HomePost';
 
 export default function Home() {
   const [modal, setModal] = useState(false);
@@ -121,13 +121,11 @@ export default function Home() {
           <Carousel />
         </Container>
       </ProductSection>
-      <Container>
-          <News/>
+
+        <News/>
          
-      </Container>
-      <MapSection>
-          <img src={Map} alt="Nigerian Map"/>
-      </MapSection>
+    
+    
       <CEO>
 <BackgroundOne>
 <Container>
@@ -158,6 +156,9 @@ export default function Home() {
 
 </BackgroundTwo>
 </CEO>
+  <MapSection>
+          <img src={Map} alt="Nigerian Map"/>
+      </MapSection>
     </React.Fragment>
   );
 }
@@ -261,15 +262,15 @@ const AboutWrapper = styled.div`
   padding-right: 15px;
 `;
 const AboutHeader = styled.div`
-  font-size: 45px;
-  color: var(--mainBlack);
+  font-size: 30px;
+  color: var(--lightBlue);
   font-weight: bold;
   display: block;
   margin-bottom: 45px;
 `;
 const ProductHeader = styled.div`
-  font-size: 45px;
-  color: var(--mainBlack);
+  font-size: 30px;
+  color: var(--lightBlue);
   font-weight: bold;
   display: block;
   margin-bottom: 45px;
@@ -327,12 +328,13 @@ height:230px;
 background-color:black;
 `
 const TeamHeader = styled.div`
-  font-size: 45px;
-  color: var(--mainBlack);
+  font-size: 30px;
+  color: var(--lightBlue);
   font-weight: bold;
   display: block;
   margin-bottom: 45px;
-  text-align:right;
+  text-align:left;
+  padding-top:40px;
 `;
 const TeamRow = styled.div `
 display:flex;
