@@ -12,7 +12,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Header() {
-  const [background, setBackground] = useState("rgba(0, 0, 0, 0.5)");
+  const [background, setBackground] = useState("rgba(0, 0, 0, 0.4)");
   const [mailPadding, setMailPadding]=useState(20)
   const [display, setDisplay] = useState("flex");
   const [fixed, setFixed] = useState("initial");
@@ -23,9 +23,9 @@ export default function Header() {
   const handleScroll = () => {
     
     if (window.pageYOffset > 0) {
-      setBackground("rgba(0, 0, 0, 0.8)");
+      setBackground("rgba(0, 0, 0, 0.4)");
     } else {
-      setBackground("rgba(0, 0, 0, 0.5)");
+      setBackground("rgba(0, 0, 0, 0.4)");
     }
   };
   const fixedScroll = () => {
