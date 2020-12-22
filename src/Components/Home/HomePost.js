@@ -106,6 +106,7 @@ padding-left:15px;
 padding-right:15px;
 :hover{
   color:var(--mainOrange);
+  text-decoration:none;
  
 }
 `
@@ -131,9 +132,15 @@ const NewsPostHeading = styled.div `
 color:var(--mainBlack);
 font-size:18px;
 font-weight:bold;
+:hover{
+  color:var(--mainOrange)
+}
 `
 const NewsPostBody = styled.div `
 color:var(--mainBlack);
+:hover{
+  color:var(--mainOrange)
+}
 
 `
 const Date = styled.div `

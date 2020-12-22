@@ -123,6 +123,7 @@ export default function Footer() {
 const Wrapper = styled.div`
   background-color: var(--lightBlue);
   height: 500px;
+  position:relative!important;
 `;
 const Container = styled.div`
   @media (min-width: 1200px) {

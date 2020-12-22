@@ -13,6 +13,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const [background, setBackground] = useState("rgba(0, 0, 0, 0.4)");
+  // const [offsetTop, setOffsetTop] = useState(0)
   const [mailPadding, setMailPadding]=useState(20)
   const [display, setDisplay] = useState("flex");
   const [fixed, setFixed] = useState("initial");
@@ -31,10 +32,12 @@ export default function Header() {
   const fixedScroll = () => {
     if (window.pageYOffset >= 100) {
       setFixed("fixed");
+    
       setMailPadding(105)
      
     } else {
       setFixed("initial");
+     
       setMailPadding(20) 
      
     }
@@ -61,7 +64,7 @@ export default function Header() {
 
   return (
     <React.Fragment>
-        <NavWrapper background={background} fixed={fixed} display={display}>
+        <NavWrapper background={background} fixed={fixed} display={display} >
       <StyledNavbar expand="sm">
         <div onClick={toggle} style={{ marginRight: "38px" }}>
           {showIcon ? (
@@ -144,7 +147,7 @@ export default function Header() {
                   textDecoration: "none",
                   borderBottom: "7px solid #f8951d",
                 }}
-                to="/news"
+                to="/about"
               >
                 About Us
               </StyledLink>
@@ -173,7 +176,7 @@ export default function Header() {
                   textDecoration: "none",
                   borderBottom: "7px solid #f8951d",
                 }}
-                to="/about"
+                to="/news"
               >
                 News
               </StyledLink>
@@ -222,7 +225,7 @@ const NavWrapper = styled.div`
   padding-bottom: 1em; */}
   color: #373737;
   background: ${(props) => props.background} !important;
-  transition: 0.4s all;
+  transition: 2s all;
   width: -webkit-fill-available;
   
   @media (max-width: 576px) {
