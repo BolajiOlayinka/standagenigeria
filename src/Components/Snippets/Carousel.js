@@ -19,7 +19,7 @@ export default function Carousel() {
         <OwlCarousel
           items="1"
           loop
-          // autoplay
+          autoplay
           dots
           
         >

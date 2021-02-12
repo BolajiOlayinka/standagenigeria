@@ -14,9 +14,9 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import AboutBG from "../../assets/AboutBG.png";
 import { Link } from "react-router-dom";
 import Carousel from "../Snippets/Carousel";
-// import Dave from '../../assets/Dave.png';
+import Dave from '../../assets/Dave2.png';
 // import Map from '../../assets/Map.png';
-// import News from './HomePost';
+import News from './HomePost';
 const bounceAnimation = keyframes`${bounce}`;
 const NextSection = styled.div`
   animation: 5s infinite ${bounceAnimation};
@@ -129,9 +129,9 @@ export default function Home() {
         </Container>
       </ProductSection>
 
-      {/* <News/> */}
+      <News/>
 
-      {/* <CEO>
+      <CEO>
 <BackgroundOne>
 <Container>
 <TeamHeader>
@@ -160,7 +160,7 @@ export default function Home() {
 <BackgroundTwo>
 
 </BackgroundTwo>
-</CEO> */}
+</CEO>
       {/* <MapSection>
           <img src={Map} alt="Nigerian Map"/>
       </MapSection> */}
@@ -452,47 +452,100 @@ const ProductSection = styled.div`
 //     height: 1000px;
 //   }
 // `;
-// const CEO = styled.div``;
-// const BackgroundOne = styled.div`
-//   height: 500px;
-//   background-color: var(--mainAsh);
-// `;
-// const BackgroundTwo = styled.div`
-//   height: 230px;
-//   background-color: black;
-// `;
-// const TeamHeader = styled.div`
-//   font-size: 30px;
-//   color: var(--lightBlue);
-//   font-weight: bold;
-//   display: block;
-//   margin-bottom: 45px;
-//   text-align: left;
-//   padding-top: 40px;
-// `;
-// const TeamRow = styled.div`
-//   display: flex;
-//   align-items: center;
-// `;
-// const CEOText = styled.div``;
-// const CEOName = styled.div`
-//   font-size: 30px;
-//   font-weight: bold;
-// `;
-// const CEOTitle = styled.div`
-//   font-size: 24px;
-//   font-weight: bold;
-//   color: var(--mainOrange);
-//   padding-bottom: 40px;
-// `;
-// const CEOQuote = styled.div`
-//   width: 530px;
-//   height: 200px;
-//   font-size: 22px;
-//   font-weight: bold;
-// `;
-// const CEOimg = styled.div`
-//   img {
-//     width: 450px;
-//   }
-// `;
+const CEO = styled.div``;
+const BackgroundOne = styled.div`
+  height: 500px;
+  background-color: var(--mainAsh);
+  @media(max-width:768px){
+   height:485px;
+  }
+  @media(max-width:576px){
+   height:440px;
+  }
+  @media(max-width:426px){
+   height:350px;
+  }
+`;
+const BackgroundTwo = styled.div`
+  height: 230px;
+  background-color: black;
+  @media(max-width:991px){
+    height:190px;
+  }
+  @media(max-width:768px){
+   display:none;
+  }
+`;
+const TeamHeader = styled.div`
+  font-size: 30px;
+  color: var(--lightBlue);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 45px;
+  text-align: left;
+  padding-top: 40px;
+`;
+const TeamRow = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const CEOText = styled.div``;
+const CEOName = styled.div`
+  font-size: 30px;
+  font-weight: bold;
+`;
+const CEOTitle = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--mainOrange);
+  padding-bottom: 40px;
+  @media(max-width:576px){
+    padding-bottom:25px;
+  }
+`;
+const CEOQuote = styled.div`
+  ${'' /* width: 530px; */}
+  height: 200px;
+  font-size: 22px;
+  font-weight: bold;
+  @media(max-width:768px){
+    font-size:16px;
+  }
+  @media(max-width:576px){
+    height:170px;
+    font-size:14px;
+  }
+  @media(max-width:576px){
+    height:140px;
+   
+  }
+  @media(max-width:426px){
+   height:100%;
+  }
+`;
+const CEOimg = styled.div`
+  img {
+    width: 430px;
+  }
+  @media(max-width:991px){
+    img{
+      width:400px;
+    }
+  }
+  @media(max-width:768px){
+    img{
+      width:250px;
+    }
+  }
+  @media(max-width:576px){
+    img{
+      width:211px;
+    }
+  }
+  @media(max-width:426px){
+    img{
+      width:120px;
+      padding-top:40px;
+    }
+  }
+`;

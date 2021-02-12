@@ -31,13 +31,13 @@ export default function HomePost(props) {
         <Header> Company News <hr/></Header>
         <PostCard to ="/">
         <div className="row">
-          <div className="col-xl-2 col-lg-2 col-md-2">
+          <div className="col-xl-2 col-lg-2 col-md-3">
             <NewsPostImg>
               <img src={ImgOne} alt="Post"/>
             </NewsPostImg>
             <Date> 1 NOV 2020</Date>
           </div>
-          <div className="col-xl-10 col-lg-10 col-md-10">
+          <div className="col-xl-10 col-lg-10 col-md-9">
             <NewsPostHeading>
             STANDAGE NIGERIA In Conjunction With the Nigerian Chamber Of Commerce Introduces new Product.
             </NewsPostHeading>
@@ -51,13 +51,13 @@ export default function HomePost(props) {
         <hr/>
         <PostCard to ="/">
         <div className="row">
-          <div className="col-xl-2 col-lg-2 col-md-2">
+          <div className="col-xl-2 col-lg-2 col-md-3">
             <NewsPostImg>
               <img src={ImgTwo} alt="Post"/>
             </NewsPostImg>
             <Date> 1 NOV 2020</Date>
           </div>
-          <div className="col-xl-10 col-lg-10 col-md-10">
+          <div className="col-xl-10 col-lg-10 col-md-9">
             <NewsPostHeading>
             CBN & Indigenous Banks In Nigeria awards STANDAGE NIGERIA an Award of Excellence for her activities at...
             </NewsPostHeading>
@@ -71,13 +71,13 @@ export default function HomePost(props) {
         <hr/>
         <PostCard to ="/">
         <div className="row">
-          <div className="col-xl-2 col-lg-2 col-md-2">
+          <div className="col-xl-2 col-lg-2 col-md-3">
             <NewsPostImg>
               <img src={ImgThree} alt="Post"/>
             </NewsPostImg>
             <Date> 1 NOV 2020</Date>
           </div>
-          <div className="col-xl-10 col-lg-10 col-md-10">
+          <div className="col-xl-10 col-lg-10 col-md-9">
             <NewsPostHeading>
             JOB OPENING in STANDAGE JAPAN for the role of a Product Manager. Application Ends on ...
             </NewsPostHeading>
@@ -116,6 +116,10 @@ const Container = styled.div `
   width:1100px;
   margin:auto;
 }
+@media(max-width:1199px){
+  width:90%;
+  margin:auto;
+}
 `
 const Header = styled.div `
 font-size:30px;
@@ -127,6 +131,11 @@ const NewsPostImg =styled.div `
 img{
   width:150px;
 }
+${'' /* @media(max-width:1024px){
+  img{
+    width:180px;
+  }
+} */}
 `
 const NewsPostHeading = styled.div `
 color:var(--mainBlack);
