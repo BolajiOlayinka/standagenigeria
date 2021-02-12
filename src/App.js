@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
-import Footer from './Components/Footer';
+// import Footer from './Components/Footer';
 import {Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
        <Route component={Home} exact path="/"/>
        <Route component={About} path="/about"/>
      </Switch>
-     <Footer/>
+     {/* <Footer/> */}
    </div>
   );
 }
