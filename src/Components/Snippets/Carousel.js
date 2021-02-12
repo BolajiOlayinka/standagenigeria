@@ -19,9 +19,9 @@ export default function Carousel() {
         <OwlCarousel
           items="1"
           loop
-          autoplay
+          // autoplay
           dots
-          className="d-lg-block d-xl-block d-md-block"
+          
         >
           <div className="item">
             <ProductSection>
@@ -100,14 +100,18 @@ export default function Carousel() {
 const CarouselWrapper = styled.div`
   padding-left: 15px;
   padding-right: 15px;
+  
 `;
 const ProductSection = styled.div`
+@media(min-width:576.1px){
   height: 800px;
+}
+  
   @media (max-width: 576px) {
-    height: 500px !important;
+    height: 560px !important;
   }
   @media (max-width: 426px) {
-    height: 300px;
+    height: 520px!important;
   }
 `;
 const DigitradLogo = styled.img`
@@ -126,7 +130,7 @@ const BeforwardLogo = styled.img`
   @media (max-width: 768px) {
     width: 150px !important;
     margin: auto;
-    text-align: cente;
+    text-align: center;
   }
 `;
 const YuasaLogo = styled.img`
@@ -243,6 +247,10 @@ const MedageSection = styled.div`
       margin: auto;
     }
   }
+  @media(max-width:576px){
+    height:500px;
+  }
+ 
 `;
 const Overlay = styled.div`
   position: absolute;

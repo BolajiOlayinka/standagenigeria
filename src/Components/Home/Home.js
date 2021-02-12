@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import Banner from "../../assets/Pepper.png";
 import Bus from "../../assets/Bus.png";
-import Team from "../../assets/Team.png";
+import Team from "../../assets/Team.jpg";
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
 // import Header from "../Header";
@@ -347,6 +347,8 @@ const LeftAbout = styled.div`
 
   img {
     width: 500px;
+    border-radius:10px;
+    padding-right:5px;
   }
   @media (max-width: 1199px) {
     img {
@@ -432,9 +434,9 @@ const ProductSection = styled.div`
   height: 1120px;
 
   @media (max-width: 576px) {
-    height: 900px;
+    height: 750px;
   }
-  //
+  
 `;
 // const MapSection = styled.div`
 //   height: 650px;
