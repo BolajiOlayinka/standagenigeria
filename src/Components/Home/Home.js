@@ -26,7 +26,16 @@ export default function Home() {
     animation: 5s infinite ${bounceAnimation};
     text-align: center;
     background-color: transparent;
-    padding-bottm: 50px;
+    padding-bottom: 50px;
+    position:absolute;
+  bottom:0;
+  width:90%;
+  margin:auto;
+    @media(max-width:576px){
+      width:80%;
+      margin:auto;
+      padding-bottom:30px;
+    }
   `;
   return (
     <React.Fragment>
@@ -167,6 +176,7 @@ const BannerUnderlay = styled.div`
   height: 600px;
   overflow: hidden;
   padding-top: 47px;
+  position:relative;
   @media (max-width: 576px) {
     height: 700px;
   }
@@ -180,6 +190,10 @@ const Container = styled.div`
   }
   @media (max-width: 1199px) {
     width: 90%;
+    margin: auto;
+  }
+  @media (max-width: 576px) {
+    width: 80%;
     margin: auto;
   }
 `;
@@ -286,6 +300,7 @@ const NextButton = styled.button`
   outline: 0;
   border: none;
   -moz-outline-style: none;
+  
 `;
 // const AboutSection = styled.div`
 //   background-image: url(${AboutBG});
