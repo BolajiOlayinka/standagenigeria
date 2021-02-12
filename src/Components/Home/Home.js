@@ -13,30 +13,32 @@ import {
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import AboutBG from "../../assets/AboutBG.png";
 import { Link } from "react-router-dom";
-// import Carousel from "../Snippets/Carousel";
+import Carousel from "../Snippets/Carousel";
 // import Dave from '../../assets/Dave.png';
 // import Map from '../../assets/Map.png';
 // import News from './HomePost';
+const bounceAnimation = keyframes`${bounce}`;
+const NextSection = styled.div`
+  animation: 5s infinite ${bounceAnimation};
+  text-align: center;
+  background-color: transparent;
+  padding-bottom: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  margin: auto;
+  @media (max-width: 576px) {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+`;
 
 export default function Home() {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-  const bounceAnimation = keyframes`${bounce}`;
-  const NextSection = styled.div`
-    animation: 5s infinite ${bounceAnimation};
-    text-align: center;
-    background-color: transparent;
-    padding-bottom: 50px;
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    margin: auto;
-    @media (max-width: 576px) {
-      width: 80%;
-      margin: auto;
-      padding-bottom: 30px;
-    }
-  `;
+  // const bounceAnimation = keyframes`${bounce}`;
+
   return (
     <React.Fragment>
       <BannerUnderlay>
@@ -117,7 +119,7 @@ export default function Home() {
           </ViewMoreDiv>
         </Container>
       </AboutSection>
-      {/* <ProductSection>
+      <ProductSection>
         <Container>
           <ProductHeader>
             Our Products
@@ -125,7 +127,7 @@ export default function Home() {
           </ProductHeader>
           <Carousel />
         </Container>
-      </ProductSection> */}
+      </ProductSection>
 
       {/* <News/> */}
 
@@ -309,11 +311,7 @@ const AboutSection = styled.div`
     height: 700px;
   }
 `;
-// const AboutWrapper = styled.div`
-//   padding-left: 15px;
-//   padding-right: 15px;
 
-// `;
 const AboutWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -377,15 +375,20 @@ const RightAbout = styled.div`
   }
   ${"" /* width:600px; */}
 `;
-// const ProductHeader = styled.div`
-//   font-size: 30px;
-//   color: var(--lightBlue);
-//   font-weight: bold;
-//   display: block;
-//   margin-bottom: 45px;
-//   padding-left: 15px;
-//   padding-right: 15px;
-// `;
+const ProductHeader = styled.div`
+  font-size: 30px;
+  color: var(--lightBlue);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 120px;
+  @media (max-width: 576px) {
+    text-align: center;
+    padding-top: 60px;
+  }
+`;
 
 const RightAboutHeading = styled.div`
   font-size: 30px;
@@ -424,12 +427,15 @@ const ViewMoreDiv = styled.div`
     margin: auto;
   }
 `;
-// const ProductSection = styled.div`
-//   background-color: var(--mainAsh);
-//   height: 1000px;
-//   padding-top: 120px;
+const ProductSection = styled.div`
+  background-color: var(--mainAsh);
+  height: 1120px;
 
-// `;
+  @media (max-width: 576px) {
+    height: 900px;
+  }
+  //
+`;
 // const MapSection = styled.div`
 //   height: 650px;
 //   overflow: hidden;

@@ -92,39 +92,90 @@ export default function Carousel() {
             </MedageSection>
           </div>
         </OwlCarousel>
-        </CarouselWrapper>
+      </CarouselWrapper>
     </React.Fragment>
   );
 }
 
 const CarouselWrapper = styled.div`
-   padding-left: 15px;
+  padding-left: 15px;
   padding-right: 15px;
 `;
 const ProductSection = styled.div`
   height: 800px;
+  @media (max-width: 576px) {
+    height: 500px !important;
+  }
+  @media (max-width: 426px) {
+    height: 300px;
+  }
 `;
 const DigitradLogo = styled.img`
   width: 300px;
+  @media (max-width: 768px) {
+    width: 150px !important;
+  }
+  @media (max-width: 576px) {
+    width: 150px !important;
+    margin: auto;
+    text-align: center;
+  }
 `;
 const BeforwardLogo = styled.img`
   width: 300px;
+  @media (max-width: 768px) {
+    width: 150px !important;
+    margin: auto;
+    text-align: cente;
+  }
 `;
 const YuasaLogo = styled.img`
   width: 300px;
+  @media (max-width: 768px) {
+    width: 150px !important;
+    margin: auto;
+    text-align: cente;
+  }
 `;
 const ProductText = styled.div`
   font-size: 30px;
   font-weight: bold;
   margin-top: 20px;
   color: var(--mainBlack) !important;
+  @media (max-width: 576px) {
+    font-size: 26px;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 426px) {
+    width: 240px;
+  }
 `;
 const ProductImageSec = styled.div`
   height: 400px;
+  @media (max-width: 576px) {
+    height: 200px;
+  }
+  @media (max-width: 426px) {
+    height: 150px;
+  }
 `;
 const ProductSubText = styled.div`
   margin-top: 20px;
   font-size: 15px;
+  @media (max-width: 576px) {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  @media (max-width: 426px) {
+    width: 240px;
+  }
 `;
 const ViewMoreDiv = styled.div`
   text-align: right;
@@ -145,20 +196,35 @@ const BeforwardSection = styled.div`
   width: 400px;
   height: 300px;
   margin-left: auto;
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: auto;
+  }
 `;
 
 const YuasaSection = styled.div`
   width: 400px;
   height: 300px;
   margin-left: auto;
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: auto;
+  }
 `;
+
 const DigitradSection = styled.div`
   width: 400px;
   height: 300px;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
 const ProductBanner = styled.img`
   width: 800px !important;
   margin: auto !important;
+  @media (max-width: 991px) {
+    width: 100% !important;
+  }
 `;
 const MedageSection = styled.div`
   height: 800px;
@@ -170,6 +236,12 @@ const MedageSection = styled.div`
     width: 800px;
     margin: auto;
     opacity: 0.4;
+  }
+  @media (max-width: 991px) {
+    img {
+      width: 100%;
+      margin: auto;
+    }
   }
 `;
 const Overlay = styled.div`
@@ -185,6 +257,10 @@ const Overlay = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: auto;
+  }
 `;
 // const BackgroundOverlay = styled.div`
 //   background: rgba(0, 0, 0, 1);
