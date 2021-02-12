@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import Banner from "../../assets/Pepper.png";
 import Bus from "../../assets/Bus.png";
-// import Team from "../../assets/Team.png";
+import Team from "../../assets/Team.png";
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
 // import Header from "../Header";
@@ -11,8 +11,8 @@ import {
   faChevronCircleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
-// import AboutBG from "../../assets/AboutBG.png";
-// import { Link } from "react-router-dom";
+import AboutBG from "../../assets/AboutBG.png";
+import { Link } from "react-router-dom";
 // import Carousel from "../Snippets/Carousel";
 // import Dave from '../../assets/Dave.png';
 // import Map from '../../assets/Map.png';
@@ -27,14 +27,14 @@ export default function Home() {
     text-align: center;
     background-color: transparent;
     padding-bottom: 50px;
-    position:absolute;
-  bottom:0;
-  width:90%;
-  margin:auto;
-    @media(max-width:576px){
-      width:80%;
-      margin:auto;
-      padding-bottom:30px;
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    margin: auto;
+    @media (max-width: 576px) {
+      width: 80%;
+      margin: auto;
+      padding-bottom: 30px;
     }
   `;
   return (
@@ -90,36 +90,33 @@ export default function Home() {
           </NextSection>
         </Container>
       </BannerUnderlay>
-      {/* <AboutSection>
+      <AboutSection>
         <Container>
+          <AboutHeader>
+            About Us
+            <hr />
+          </AboutHeader>
           <AboutWrapper>
-            <AboutHeader>
-              About Us
-              <hr />
-            </AboutHeader>
-            <div className="row align-items-center">
-              <div className="col-lg-6 col-md-6">
-                <img src={Team} alt="Standage Team" />
-              </div>
-              <div className="col-lg-6 col-md-6">
-                <RightAboutHeading>
-                  We make Quality Japanese Products Available Wherever in the
-                  World.
-                </RightAboutHeading>
-                <RightAboutSubHeading>
-                  STANDAGE.inc is a Japan based technology company established
-                  2017. We provide digital platform to international trading
-                  businesses & Importation of Japanese Products Across the
-                  World.
-                </RightAboutSubHeading>
-              </div>
-            </div>
+            <LeftAbout>
+              <img src={Team} alt="Standage Team" />
+            </LeftAbout>
+            <RightAbout>
+              <RightAboutHeading>
+                We make Quality Japanese Products Available Wherever in the
+                World.
+              </RightAboutHeading>
+              <RightAboutSubHeading>
+                STANDAGE.inc is a Japan based technology company established
+                2017. We provide digital platform to international trading
+                businesses & Importation of Japanese Products Across the World.
+              </RightAboutSubHeading>
+            </RightAbout>
           </AboutWrapper>
           <ViewMoreDiv>
             <Link to="/">View More . . .</Link>
           </ViewMoreDiv>
         </Container>
-      </AboutSection> */}
+      </AboutSection>
       {/* <ProductSection>
         <Container>
           <ProductHeader>
@@ -176,7 +173,7 @@ const BannerUnderlay = styled.div`
   height: 600px;
   overflow: hidden;
   padding-top: 47px;
-  position:relative;
+  position: relative;
   @media (max-width: 576px) {
     height: 700px;
   }
@@ -300,24 +297,86 @@ const NextButton = styled.button`
   outline: 0;
   border: none;
   -moz-outline-style: none;
-  
 `;
-// const AboutSection = styled.div`
-//   background-image: url(${AboutBG});
-//   height: 720px;
-//   display: flex;
-// `;
+const AboutSection = styled.div`
+  background-image: url(${AboutBG});
+  height: 720px;
+  display: flex;
+  @media (max-width: 991px) {
+    height: 500px;
+  }
+  @media (max-width: 768px) {
+    height: 700px;
+  }
+`;
 // const AboutWrapper = styled.div`
 //   padding-left: 15px;
 //   padding-right: 15px;
+
 // `;
-// const AboutHeader = styled.div`
-//   font-size: 30px;
-//   color: var(--lightBlue);
-//   font-weight: bold;
-//   display: block;
-//   margin-bottom: 45px;
-// `;
+const AboutWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  @media (max-width: 767.9px) {
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: auto;
+  }
+`;
+const AboutHeader = styled.div`
+  font-size: 30px;
+  color: var(--lightBlue);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media (max-width: 767.9px) {
+    width: 400px;
+    margin: auto;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: auto;
+  }
+`;
+const LeftAbout = styled.div`
+  display: flex;
+
+  img {
+    width: 500px;
+  }
+  @media (max-width: 1199px) {
+    img {
+      width: 450px;
+    }
+  }
+  @media (max-width: 991px) {
+    img {
+      width: 350px;
+    }
+  }
+  @media (max-width: 767.9px) {
+    img {
+      width: 100%;
+    }
+  }
+`;
+const RightAbout = styled.div`
+  padding-left: 30px;
+  @media (max-width: 991px) {
+    padding-left: 15px;
+  }
+  @media (max-width: 768px) {
+    padding-left: 0px;
+    width: 100%;
+  }
+  ${"" /* width:600px; */}
+`;
 // const ProductHeader = styled.div`
 //   font-size: 30px;
 //   color: var(--lightBlue);
@@ -327,31 +386,49 @@ const NextButton = styled.button`
 //   padding-left: 15px;
 //   padding-right: 15px;
 // `;
-// const RightAboutHeading = styled.div`
-//   font-size: 30px;
-//   font-weight: bold;
-// `;
-// const RightAboutSubHeading = styled.div`
-//   font-size: 15px;
-//   margin-top: 20px;
-// `;
-// const ViewMoreDiv = styled.div`
-//   text-align: right;
-//   margin-top: 30px;
-//   a {
-//     font-size: 20px;
-//     color: black;
-//   }
-//   a:hover {
-//     color: var(--mainOrange);
-//     text-decoration: none;
-//   }
-// `;
+
+const RightAboutHeading = styled.div`
+  font-size: 30px;
+  font-weight: bold;
+  @media (max-width: 991px) {
+    font-size: 28px;
+  }
+`;
+const RightAboutSubHeading = styled.div`
+  font-size: 15px;
+  margin-top: 20px;
+  @media (max-width: 991px) {
+    margin-top: 15px;
+  }
+`;
+const ViewMoreDiv = styled.div`
+  text-align: right;
+  margin-top: 30px;
+  a {
+    font-size: 20px;
+    color: black;
+  }
+  a:hover {
+    color: var(--mainOrange);
+    text-decoration: none;
+  }
+  @media (max-width: 991px) {
+    margin-top: 15px;
+  }
+  @media (max-width: 767.9px) {
+    width: 400px;
+    margin: auto;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: auto;
+  }
+`;
 // const ProductSection = styled.div`
 //   background-color: var(--mainAsh);
 //   height: 1000px;
 //   padding-top: 120px;
-  
+
 // `;
 // const MapSection = styled.div`
 //   height: 650px;
