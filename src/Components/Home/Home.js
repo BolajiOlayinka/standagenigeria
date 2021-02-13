@@ -15,7 +15,7 @@ import AboutBG from "../../assets/AboutBG.png";
 import { Link } from "react-router-dom";
 import Carousel from "../Snippets/Carousel";
 import Dave from '../../assets/Dave2.png';
-import Map from '../../assets/Map.png';
+// import Map from '../../assets/Map.png';
 import News from './HomePost';
 const bounceAnimation = keyframes`${bounce}`;
 const NextSection = styled.div`

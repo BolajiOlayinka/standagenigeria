@@ -7,6 +7,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+// import {faGithub, faInstagram, faMedium, faLinkedin, faTwitter, faWhatsapp} from "@fortawesome/free-brands-svg-icons";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import linkedin from "../assets/linkedin.png";
@@ -14,6 +15,7 @@ import twitter from "../assets/twitter.png";
 import whatsapp from "../assets/whatsapp.png";
 import { Link } from "react-router-dom";
 import message from "../assets/message.png";
+
 
 export default function Footer() {
   return (
@@ -126,8 +128,17 @@ const Wrapper = styled.div`
   position:relative!important;
 `;
 const Container = styled.div`
+  width: 100%;
   @media (min-width: 1200px) {
     width: 1100px;
+    margin: auto;
+  }
+  @media (max-width: 1199px) {
+    width: 90%;
+    margin: auto;
+  }
+  @media (max-width: 576px) {
+    width: 80%;
     margin: auto;
   }
 `;
