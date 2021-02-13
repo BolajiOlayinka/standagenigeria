@@ -15,7 +15,7 @@ import AboutBG from "../../assets/AboutBG.png";
 import { Link } from "react-router-dom";
 import Carousel from "../Snippets/Carousel";
 import Dave from '../../assets/Dave2.png';
-// import Map from '../../assets/Map.png';
+import Map from '../../assets/Map.png';
 import News from './HomePost';
 const bounceAnimation = keyframes`${bounce}`;
 const NextSection = styled.div`
@@ -161,9 +161,21 @@ export default function Home() {
 
 </BackgroundTwo>
 </CEO>
-      {/* <MapSection>
-          <img src={Map} alt="Nigerian Map"/>
-      </MapSection> */}
+      <MapSection>
+     
+      <iframe
+                title="googlemap"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.584731262454!2d3.370014814105579!3d6.573976924399932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b927bb740fa29%3A0x150c96622f4c49dd!2sSTANDAGE.inc!5e0!3m2!1sen!2sng!4v1613197652479!5m2!1sen!2sng"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ border: 0, backgroundColor:"black" }}
+                allowFullScreen=""
+                aria-hidden="false"
+                tabIndex="0"
+                
+              ></iframe>
+      </MapSection>
     </React.Fragment>
   );
 }
@@ -438,20 +450,24 @@ const ProductSection = styled.div`
   }
   
 `;
-// const MapSection = styled.div`
-//   height: 650px;
-//   overflow: hidden;
-
-//   img {
-//     width: 100%;
-//   }
-//   @media (min-width: 1400px) {
-//     height: 800px;
-//   }
-//   @media (min-width: 2000px) {
-//     height: 1000px;
-//   }
-// `;
+const MapSection = styled.div`
+  height: 500px;
+  overflow: hidden;
+  @media (min-width: 1200px) {
+    height: 700px;
+  }
+  
+  @media(max-width:576px){
+   height:270px;
+  }
+  iframe{
+    -webkit-filter: invert(100%);
+        -moz-filter: invert(100%);
+        -ms-filter: invert(100%);
+        -o-filter: invert(100%);
+         filter: invert(100%);
+  }
+`;
 const CEO = styled.div``;
 const BackgroundOne = styled.div`
   height: 500px;
