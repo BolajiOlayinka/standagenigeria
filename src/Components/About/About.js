@@ -121,6 +121,18 @@ export default function About() {
             <div>Excellence Is Our Priority </div>
             <div>We Believe that Business Transcends Just Profit-Making</div>
           </TeamSubHeader>
+          <Small>
+            <TextSection>
+                  <h5>Our Values</h5>
+                
+                 <Section><span><FontAwesomeIcon icon={faCheckCircle}/></span><div>We Are in Africa to Provide Businesses that Pitch 
+                  the African Continent At Par With the Rest of the WORLD.</div></Section> 
+                  
+                 <Section><span><FontAwesomeIcon icon={faCheckCircle}/></span><div>The Best Way to Make the Difference is to a Livelihood for Nigerians. 
+                  We CREATE Inclusive Businesses to CATER for EVERYONES' Needs</div></Section> 
+             
+            </TextSection>
+            </Small>
           <TeamContainer>
             <PictureSection>
             
@@ -136,6 +148,7 @@ export default function About() {
           <div><img src={pic6} alt="standage Eight" /></div>
         </PictureTwo>
             </PictureSection>
+            <Large>
             <TextSection>
                   <h5>Our Values</h5>
                 
@@ -146,6 +159,8 @@ export default function About() {
                   We CREATE Inclusive Businesses to CATER for EVERYONES' Needs</div></Section> 
              
             </TextSection>
+            </Large>
+            
           </TeamContainer>
           
       </Container>
@@ -160,9 +175,11 @@ const BannerUnderlay = styled.div`
   background-image: url(${AboutBanner});
   background-size: cover;
   background-repeat: no-repeat;
-
   padding-top: 47px;
   position: relative;
+@media(max-width:1199px){
+  height:380px;
+}
 `;
 const Container = styled.div`
   width: 100%;
@@ -181,6 +198,9 @@ const Container = styled.div`
 `;
 const BannerSection = styled.div`
   width: 600px;
+  @media(max-width:768px){
+    width:90%;
+  }
 `;
 const BannerHeading = styled.div`
   font-size: 30px;
@@ -203,6 +223,10 @@ const BannerSubHeading = styled.div`
 const ButtonSection = styled.div`
   text-align: right;
   margin-top: -45px;
+  @media(max-width:1199px){
+    margin-top:-15px;
+   
+  }
 `;
 const PlayButton = styled.button`
   background-color: #f8951d;
@@ -213,8 +237,9 @@ const PlayButton = styled.button`
   margin-bottom: 2%;
   font-size: 24px;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   border-radius: 5px;
+
   :active {
     outline: 0;
     border: none;
@@ -229,17 +254,19 @@ const PlayButton = styled.button`
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: 55px;
-    padding: 8px 28px;
+    ${'' /* padding: 8px 28px; */}
   }
   @media (min-width: 991px) and (max-width: 1199.9px) {
-    margin-bottom: 25px;
-    padding: 10px 24px;
+    margin-bottom: 0px;
+    margin-top:15px;
+    padding: 8px 28px;
   }
   @media (min-width: 576px) and (max-width: 990.9px) {
-    margin-bottom: 25px;
+    margin-bottom: 0px;
+    margin-top:20px;
     padding: 10px 24px;
   }
-  @media (max-width: 576.1px) {
+  @media (max-width: 575.9px) {
     display: none;
   }
 `;
@@ -250,6 +277,14 @@ const BannerJoiner = styled.div`
   z-index: 5;
   background-color: var(--mainOrange);
   margin-top: -80px;
+
+  @media(max-width:1199px){
+    margin-top:-30px;
+    height:180px;
+  }
+  @media (max-width: 575.9px) {
+    display: none;
+  }
 `;
 const MissionSection = styled.div`
   background-color:white;;
@@ -266,6 +301,13 @@ hr{
   height:200px;
   margin-top:-50px;
 }
+@media(max-width:991px){
+  flex-direction:column;
+  hr{
+  display:none;
+}
+}
+
 `;
 const MissionBody = styled.div`
   width: 488px;
@@ -273,7 +315,10 @@ const MissionBody = styled.div`
   margin-right:auto;
 
   text-align: center;
-  
+  @media (max-width: 575.9px) {
+    width:90%;
+    margin:auto;
+  }
 `;
 const BodyContent = styled.div`
 padding-top:15px;
@@ -284,7 +329,14 @@ const VisionBody = styled.div`
   margin-left:auto;
   margin-right:auto;
   text-align: center;
- 
+  @media(max-width:991px){
+  padding-top:30px;
+
+}
+@media (max-width: 575.9px) {
+    width:90%;
+    margin:auto;
+  }
 `;
 const Head = styled.div`
   width: 200px;
@@ -315,11 +367,19 @@ div:first-child{
 }
 padding-top:30px;
 padding-bottom:30px;
+@media(max-width:991px){
+  width:360px;
+  margin:auto;
+  text-align:center;
+}
 `
 const TeamContainer = styled.div `
 display:flex;
 align-items:center;
 justify-content:space-between;
+@media(max-width:991px){
+  flex-direction:column;
+}
 `
 const PictureSection = styled.div `
 
@@ -329,13 +389,17 @@ display:flex;
 
 img{
   width:300px;
- 
   border-radius:10px;
   margin-bottom:20px;
   margin-right:20px;
 }
 div{
 border-radius:10px;
+}
+@media(max-width:991px){
+  img{
+    width:200px;
+  }
 }
 `
 const PictureOne = styled.div `
@@ -353,6 +417,12 @@ img{
   
 
 }
+@media(max-width:991px){
+  img{
+    width:200px;
+    height:150px;
+  }
+}
 `
 const SecondLong = styled.div `
  height:320px;
@@ -364,7 +434,13 @@ img{
  
 
 }
-
+@media(max-width:991px){
+  height:230px;
+  img{
+    
+    height:250px;
+  }
+}
 `
 const TextSection = styled.div `
 width:300px;
@@ -379,8 +455,16 @@ h5{
   padding-bottom:10px;
 
 }
-
-
+`
+const Large =styled.div `
+@media(max-width:991px){
+  display:none;
+}
+`
+const Small =styled.div `
+@media(min-width:991.1px){
+  display:none;
+}
 `
 const Section = styled.div `
 display:flex;
