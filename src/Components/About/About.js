@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import AboutBanner from "../../assets/StandageAbout.png";
-import Check from '../../assets/check.png';
+// import Check from '../../assets/check.png';
 // import Header from '../Header';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
