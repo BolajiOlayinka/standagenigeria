@@ -14,9 +14,10 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import AboutBG from "../../assets/AboutBG.png";
 import { Link } from "react-router-dom";
 import Carousel from "../Snippets/Carousel";
-import Dave from '../../assets/Dave2.png';
+import Dave from "../../assets/Dave2.png";
+import animateScrollTo from "animated-scroll-to";
 // import Map from '../../assets/Map.png';
-import News from './HomePost';
+import News from "./HomePost";
 const bounceAnimation = keyframes`${bounce}`;
 const NextSection = styled.div`
   animation: 5s infinite ${bounceAnimation};
@@ -37,8 +38,10 @@ const NextSection = styled.div`
 export default function Home() {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-  // const bounceAnimation = keyframes`${bounce}`;
 
+  const ScrolltoNext = () => {
+    animateScrollTo(document.querySelector(".abouthome"));
+  };
   return (
     <React.Fragment>
       <BannerUnderlay>
@@ -64,7 +67,7 @@ export default function Home() {
                   className="video"
                   style={{
                     position: "relative",
-                    paddingBottom: "56.25%" /* 16:9 */,
+                    paddingBottom: "56.25%",
                     paddingTop: 25,
                     height: 0,
                   }}
@@ -85,7 +88,7 @@ export default function Home() {
               </ModalBody>
             </Modal>
           </BannerSection>
-          <NextSection>
+          <NextSection onClick={ScrolltoNext} className="abouthome">
             <NextButton>
               <FontAwesomeIcon icon={faChevronCircleDown} />{" "}
             </NextButton>
@@ -129,52 +132,44 @@ export default function Home() {
         </Container>
       </ProductSection>
 
-      <News/>
+      <News />
 
       <CEO>
-<BackgroundOne>
-<Container>
-<TeamHeader>
-  Our Team
-  <hr/>
-</TeamHeader>
-<TeamRow>
-<CEOText>
-      <CEOName>
-            Dave Gabriel
-      </CEOName>
-      <CEOTitle>
-            C.E.O 
-      </CEOTitle>
-      <CEOQuote>
-        We are here to present the kind of Trading experience never witnessed in Nigeria. Watch out for the space !!!
-      </CEOQuote>
-</CEOText>
-<CEOimg>
-<img src={Dave} alt="Dave Gabriel"/>
-</CEOimg>
-</TeamRow>
-</Container>
-
-</BackgroundOne>
-<BackgroundTwo>
-
-</BackgroundTwo>
-</CEO>
+        <BackgroundOne>
+          <Container>
+            <TeamHeader>
+              Our Team
+              <hr />
+            </TeamHeader>
+            <TeamRow>
+              <CEOText>
+                <CEOName>Dave Gabriel</CEOName>
+                <CEOTitle>C.E.O</CEOTitle>
+                <CEOQuote>
+                  We are here to present the kind of Trading experience never
+                  witnessed in Nigeria. Watch out for the space !!!
+                </CEOQuote>
+              </CEOText>
+              <CEOimg>
+                <img src={Dave} alt="Dave Gabriel" />
+              </CEOimg>
+            </TeamRow>
+          </Container>
+        </BackgroundOne>
+        <BackgroundTwo></BackgroundTwo>
+      </CEO>
       <MapSection>
-     
-      <iframe
-                title="googlemap"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.584731262454!2d3.370014814105579!3d6.573976924399932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b927bb740fa29%3A0x150c96622f4c49dd!2sSTANDAGE.inc!5e0!3m2!1sen!2sng!4v1613197652479!5m2!1sen!2sng"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                style={{ border: 0, backgroundColor:"black" }}
-                allowFullScreen=""
-                aria-hidden="false"
-                tabIndex="0"
-                
-              ></iframe>
+        <iframe
+          title="googlemap"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.584731262454!2d3.370014814105579!3d6.573976924399932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b927bb740fa29%3A0x150c96622f4c49dd!2sSTANDAGE.inc!5e0!3m2!1sen!2sng!4v1613197652479!5m2!1sen!2sng"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          style={{ border: 0, backgroundColor: "black" }}
+          allowFullScreen=""
+          aria-hidden="false"
+          tabIndex="0"
+        ></iframe>
       </MapSection>
     </React.Fragment>
   );
@@ -359,8 +354,8 @@ const LeftAbout = styled.div`
 
   img {
     width: 500px;
-    border-radius:10px;
-    padding-right:5px;
+    border-radius: 10px;
+    padding-right: 5px;
   }
   @media (max-width: 1199px) {
     img {
@@ -448,7 +443,6 @@ const ProductSection = styled.div`
   @media (max-width: 576px) {
     height: 750px;
   }
-  
 `;
 const MapSection = styled.div`
   height: 500px;
@@ -456,40 +450,40 @@ const MapSection = styled.div`
   @media (min-width: 1200px) {
     height: 700px;
   }
-  
-  @media(max-width:576px){
-   height:270px;
+
+  @media (max-width: 576px) {
+    height: 270px;
   }
-  iframe{
+  iframe {
     -webkit-filter: invert(100%);
-        -moz-filter: invert(100%);
-        -ms-filter: invert(100%);
-        -o-filter: invert(100%);
-         filter: invert(100%);
+    -moz-filter: invert(100%);
+    -ms-filter: invert(100%);
+    -o-filter: invert(100%);
+    filter: invert(100%);
   }
 `;
 const CEO = styled.div``;
 const BackgroundOne = styled.div`
   height: 500px;
   background-color: var(--mainAsh);
-  @media(max-width:768px){
-   height:485px;
+  @media (max-width: 768px) {
+    height: 485px;
   }
-  @media(max-width:576px){
-   height:440px;
+  @media (max-width: 576px) {
+    height: 440px;
   }
-  @media(max-width:426px){
-   height:350px;
+  @media (max-width: 426px) {
+    height: 350px;
   }
 `;
 const BackgroundTwo = styled.div`
   height: 230px;
   background-color: black;
-  @media(max-width:991px){
-    height:190px;
+  @media (max-width: 991px) {
+    height: 190px;
   }
-  @media(max-width:768px){
-   display:none;
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 const TeamHeader = styled.div`
@@ -515,53 +509,52 @@ const CEOTitle = styled.div`
   font-weight: bold;
   color: var(--mainOrange);
   padding-bottom: 40px;
-  @media(max-width:576px){
-    padding-bottom:25px;
+  @media (max-width: 576px) {
+    padding-bottom: 25px;
   }
 `;
 const CEOQuote = styled.div`
-  ${'' /* width: 530px; */}
+  ${"" /* width: 530px; */}
   height: 200px;
   font-size: 22px;
   font-weight: bold;
-  @media(max-width:768px){
-    font-size:16px;
+  @media (max-width: 768px) {
+    font-size: 16px;
   }
-  @media(max-width:576px){
-    height:170px;
-    font-size:14px;
+  @media (max-width: 576px) {
+    height: 170px;
+    font-size: 14px;
   }
-  @media(max-width:576px){
-    height:140px;
-   
+  @media (max-width: 576px) {
+    height: 140px;
   }
-  @media(max-width:426px){
-   height:100%;
+  @media (max-width: 426px) {
+    height: 100%;
   }
 `;
 const CEOimg = styled.div`
   img {
     width: 430px;
   }
-  @media(max-width:991px){
-    img{
-      width:400px;
+  @media (max-width: 991px) {
+    img {
+      width: 400px;
     }
   }
-  @media(max-width:768px){
-    img{
-      width:250px;
+  @media (max-width: 768px) {
+    img {
+      width: 250px;
     }
   }
-  @media(max-width:576px){
-    img{
-      width:211px;
+  @media (max-width: 576px) {
+    img {
+      width: 211px;
     }
   }
-  @media(max-width:426px){
-    img{
-      width:120px;
-      padding-top:40px;
+  @media (max-width: 426px) {
+    img {
+      width: 120px;
+      padding-top: 40px;
     }
   }
 `;
