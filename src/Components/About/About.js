@@ -4,7 +4,7 @@ import AboutBanner from "../../assets/StandageAbout.png";
 // import Check from '../../assets/check.png';
 // import Header from '../Header';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -50,12 +50,12 @@ export default function About() {
             Importation of Japanese Products Across the World.
           </BannerSubHeading>
         </BannerSection>
-        <ButtonSection>
+        {/* <ButtonSection>
           <PlayButton onClick={toggle}>
             Who are we ...
             <FontAwesomeIcon className="ml-4" icon={faPlayCircle} />
           </PlayButton>
-        </ButtonSection>
+        </ButtonSection> */}
 
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}></ModalHeader>
@@ -94,7 +94,7 @@ export default function About() {
             <MissionBody>
               <Head> Mission</Head>
               <BodyContent>
-                " Enhancing the Quality of Life through the Creation of
+                " Enhancing the Quality of Life Through the Creation of
                 Innovative Business in Africa "
               </BodyContent>
             </MissionBody>
@@ -103,7 +103,7 @@ export default function About() {
               <Head> Vision</Head>
               <BodyContent>
                 
-                  <div>To be Africa's No. 1 Quality Provider </div>
+                  <div>To be Africa's No. 1 Quality Product Provider </div>
                    <div>To be Africa's No. 1 Quality Employee Provider </div>
                   
                     <div>To be Africa's No. 1 Quality Technology & Service Provider</div>
@@ -175,10 +175,16 @@ const BannerUnderlay = styled.div`
   background-image: url(${AboutBanner});
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 47px;
+  display:flex;
+  align-items:center;
+  height:400px;
+  ${'' /* padding-top: 47px; */}
   position: relative;
 @media(max-width:1199px){
   height:380px;
+}
+@media(max-width:576px){
+  height:600px;
 }
 `;
 const Container = styled.div`
@@ -198,8 +204,12 @@ const Container = styled.div`
 `;
 const BannerSection = styled.div`
   width: 600px;
+  height:300px;
   @media(max-width:768px){
     width:90%;
+  }
+  @media(max-width:576px){
+    height:400px;
   }
 `;
 const BannerHeading = styled.div`
@@ -220,56 +230,8 @@ const BannerSubHeading = styled.div`
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 `;
-const ButtonSection = styled.div`
-  text-align: right;
-  margin-top: -45px;
-  @media(max-width:1199px){
-    margin-top:-15px;
-   
-  }
-`;
-const PlayButton = styled.button`
-  background-color: #f8951d;
-  color: white;
-  border: none;
-  width: 324px;
-  height: 81px;
-  margin-bottom: 2%;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 5px;
 
-  :active {
-    outline: 0;
-    border: none;
-    -moz-outline-style: none;
-  }
-  :focus {
-    outline: 0;
-    border: none;
-    -moz-outline-style: none;
-  }
-  @media (min-width: 1200px) {
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 55px;
-    ${'' /* padding: 8px 28px; */}
-  }
-  @media (min-width: 991px) and (max-width: 1199.9px) {
-    margin-bottom: 0px;
-    margin-top:15px;
-    padding: 8px 28px;
-  }
-  @media (min-width: 576px) and (max-width: 990.9px) {
-    margin-bottom: 0px;
-    margin-top:20px;
-    padding: 10px 24px;
-  }
-  @media (max-width: 575.9px) {
-    display: none;
-  }
-`;
+
 const BannerJoiner = styled.div`
   width: 30px;
   height: 200px;
@@ -372,6 +334,11 @@ padding-bottom:30px;
   margin:auto;
   text-align:center;
 }
+@media(max-width:425px){
+  font-size:24px;
+  width:100%;
+  
+}
 `
 const TeamContainer = styled.div `
 display:flex;
@@ -401,7 +368,15 @@ border-radius:10px;
     width:200px;
   }
 }
+@media(max-width:576px){
+  img{
+    width:150px;
+    height:80px;
+    border-radius:5px;
+  }
+}
 `
+
 const PictureOne = styled.div `
 display:flex;
 align-items:flex-end;
@@ -422,6 +397,14 @@ img{
     width:200px;
     height:150px;
   }
+  
+}
+@media(max-width:576px){
+  img{
+    width:150px;
+    height:80px;
+    border-radius:5px;
+  }
 }
 `
 const SecondLong = styled.div `
@@ -439,6 +422,13 @@ img{
   img{
     
     height:250px;
+  }
+}
+@media(max-width:576px){
+  height:150px;
+  img{
+    width:150px;
+    height:220px
   }
 }
 `

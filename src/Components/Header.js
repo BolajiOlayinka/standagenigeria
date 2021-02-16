@@ -12,9 +12,9 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Header() {
-  const [background, setBackground] = useState("rgba(0, 0, 0, 0.4)");
+  const [background, setBackground] = useState("black");
   // const [offsetTop, setOffsetTop] = useState(0)
-  const [mailPadding, setMailPadding]=useState(20)
+  // const [mailPadding, setMailPadding]=useState(20)
   const [display, setDisplay] = useState("flex");
   const [fixed, setFixed] = useState("initial");
   const [showIcon, setShowIcon] = useState(true);
@@ -24,21 +24,19 @@ export default function Header() {
   const handleScroll = () => {
     
     if (window.pageYOffset > 0) {
-      setBackground("rgba(0, 0, 0, 0.4)");
-    } else {
-      setBackground("rgba(0, 0, 0, 0.4)");
-    }
+      setBackground("black");
+    } 
   };
   const fixedScroll = () => {
     if (window.pageYOffset >= 100) {
       setFixed("fixed");
     
-      setMailPadding(105)
+      // setMailPadding(105)
      
     } else {
       setFixed("initial");
      
-      setMailPadding(20) 
+      // setMailPadding(20) 
      
     }
   };
@@ -140,13 +138,7 @@ export default function Header() {
             <NavItem>
               <StyledLink
                 activeclassname="selected"
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
+               
                 to="/about"
               >
                 About Us
@@ -154,14 +146,7 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                activeclassname="selected"
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
+                
                 to="/#digitrad"
               >
                 Service
@@ -169,13 +154,7 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
+               
                 to="/news"
               >
                 News
@@ -183,17 +162,19 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
+                
                 to="/about"
               >
                 Our Team
               </StyledLink>
+            </NavItem>
+            <NavItem>
+              <Link
+               
+                to=""
+              >
+                <img src={Email} alt="standage email"/>
+              </Link>
             </NavItem>
           </StyledNav>
         </LargeNav>
@@ -204,12 +185,7 @@ export default function Header() {
       </StyledNavbar>
      
     </NavWrapper>
-    <MailContainer fixed={fixed} padding={mailPadding} display={display}>
-    <Container>
-    <Link to ="/"><img src={Email} alt="standage email"/></Link>
-    </Container>
-        
-    </MailContainer>
+    
     </React.Fragment>
 
   );
@@ -221,8 +197,6 @@ const NavWrapper = styled.div`
   flex: auto;
   align-items: center;
   position: ${(props) => props.fixed} !important;
-  ${'' /* padding-top: 1em;
-  padding-bottom: 1em; */}
   color: #373737;
   background: ${(props) => props.background} !important;
   transition: 2s all;
@@ -232,12 +206,7 @@ const NavWrapper = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
   }
 `;
-const Container = styled.div `
-@media(min-width:1200px){
-  width:1100px;
-  margin:auto;
-}
-`
+
 const LogoContainer = styled.div`
   ${'' /* img {
     width: 150px;
@@ -284,7 +253,6 @@ const StyledLink = styled(Link)`
     color: #f8951d;
     cursor: pointer;
     text-decoration: none;
-
     border-bottom: 7px solid #f8951d;
   }
   :active {
@@ -338,10 +306,4 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
   margin-left: -2px;
   font-size: 24px;
 `;
-const MailContainer = styled.div `
-position: ${(props) => props.fixed} !important;
-padding-top:${(props)=> props.padding}px!important;
-display: ${(props) => props.display} !important;
-text-align:right;
-width:100%;
-`
+

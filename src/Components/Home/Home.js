@@ -19,15 +19,17 @@ import animateScrollTo from "animated-scroll-to";
 // import Map from '../../assets/Map.png';
 import News from "./HomePost";
 const bounceAnimation = keyframes`${bounce}`;
+
 const NextSection = styled.div`
   animation: 5s infinite ${bounceAnimation};
   text-align: center;
   background-color: transparent;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   position: absolute;
   bottom: 0;
   width: 90%;
   margin: auto;
+
   @media (max-width: 576px) {
     width: 80%;
     margin: auto;
@@ -181,7 +183,9 @@ const BannerUnderlay = styled.div`
   background-repeat: no-repeat;
   height: 600px;
   overflow: hidden;
-  padding-top: 47px;
+  ${'' /* padding-top: 47px; */}
+  display:flex;
+  align-items:center;
   position: relative;
   @media (max-width: 576px) {
     height: 700px;
@@ -206,6 +210,7 @@ const Container = styled.div`
 
 const BannerSection = styled.div`
   width: 600px;
+  height:400px;
   @media (max-width: 768px) {
     width: 500px;
   }
@@ -304,8 +309,15 @@ const NextButton = styled.button`
   color: white;
   font-size: 32px;
   outline: 0;
-  border: none;
+  border:transparent;
   -moz-outline-style: none;
+  :hover{
+    color:var(--mainOrange);
+  }
+  :focus{
+    outline: 0;
+  border:transparent;
+  }
 `;
 const AboutSection = styled.div`
   background-image: url(${AboutBG});
