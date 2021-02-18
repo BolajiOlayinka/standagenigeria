@@ -259,17 +259,44 @@ const Partners = styled.div `
 display:flex;
 align-items:center;
 background-color:white;
-
+@media(max-width:768px){
+  flex-direction:column;
+}
 `
 const RightPartner =styled.div `
 margin-left:auto;
 height:550px;
 overflow:hidden;
 width:550px;
+@media(max-width:1024px){
+  width:450px;
+}
+@media(max-width:991px){
+  width:300px;
+}
+@media(max-width:768px){
+  width:450px;
+  height:400px;
+  margin:auto;
+}
+@media(max-width:576px){
+  width:350px;
+  height:400px;
+  margin:auto;
+}
+@media(max-width:425px){
+  width:100%;
+ 
+}
 `
 const RightUp = keyframes`
  from {bottom:0px;}
   to {bottom: 530px;}
+@media(max-width:576px){
+  from {bottom:0px;}
+  to {bottom: 930px;}
+}
+
 `
 const PartnerContainer = styled.div `
 width:100%;
@@ -283,15 +310,49 @@ animation-duration: 15s;
   animation-delay: 0s;
 animation-timing-function: ease; 
 animation-direction: alternate;
+@media(max-width:1024px){
+  height:1000px;
+}
+@media(max-width:991px){
+  height:1350px;
+}
+@media(max-width:768px){
+  height:950px;
+}
+@media(max-width:576px){
+  height:1550px;
+}
 `
 const LeftPartner = styled.div `
 width:420px;
+
+@media(max-width:991px){
+  width:370px;
+}
+@media(max-width:768px){
+  width:450px;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+@media(max-width:576px){
+  animation-duration: 20s;
+  width:350px;
+  margin:auto;
+}
+@media(max-width:425px){
+  width:100%;
+ 
+}
 
 `
 const BrandTitle =styled.div `
 font-size:26px;
 font-weight:bold;
 padding-bottom:15px;
+@media(max-width:768px){
+ font-size:30px;
+
+}
 `
 const BrandSubtitle = styled.div `
 line-height:22px;
@@ -308,6 +369,9 @@ box-shadow: 0 0 15px rgb(136 153 166 / 20%), 0 0 3px 1px rgb(136 153 166 / 15%);
 img{
     width:100px;
 }
+@media(max-width:1024px){
+  width:130px;
+}
 
 `
 
@@ -316,6 +380,7 @@ backgroundColor:var(--mainAsh);
 
 padding-top:45px;
 padding-bottom:100px;
+
 `
 const FormTitle = styled.div `
 font-size:24px;
@@ -323,10 +388,27 @@ width:300px;
 margin:auto;
 font-weight:bold;
 padding-bottom:35px;
+@media(max-width:576px){
+  width:150px;
+  font-size:18px;
+  
+}
 `
 const FormContainer = styled.div `
 width:600px;
 margin:auto;
+@media(max-width:768px){
+  width:450px;
+  margin:auto;
+}
+@media(max-width:576px){
+  width:350px;
+  margin:auto;
+}
+@media(max-width:425px){
+  width:100%;
+ 
+}
 `
 
 const FormHeader = styled.div `
@@ -342,5 +424,16 @@ span{
   background-color:var(--lightBlue);
   color:white;
   margin-right:10px;
+    border-radius:4px;
+}
+@media(max-width:576px){
+  font-weight:bold;
+  color:var(--lightBlue);
+  span{
+    display:none;
+  }
+}
+@media(max-width:425px){
+  font-size:14px;
 }
 `
