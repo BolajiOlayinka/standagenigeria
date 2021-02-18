@@ -233,14 +233,14 @@ const ContentOne = styled.div`
     
   }
   @media(max-width:768px){
-    width:50%;
+    width:450px;
     border:0px;
     margin:auto;
     justify-content:center;
   }
   @media(max-width:576px){
   
-  width:80%;
+  width:350px;
   margin:auto;
     }
     @media(max-width:426px){
@@ -262,12 +262,12 @@ padding-bottom:30px;
   @media(max-width:768px){
   padding-left:0px;
   padding-top:30px;
-width:50%;
+  width:450px;;
 margin:auto;
   }
   @media(max-width:576px){
   
-width:80%;
+    width:350px;
 margin:auto;
   }
   @media(max-width:426px){
@@ -292,11 +292,11 @@ const ContentThree = styled.div`
   }
   }
   @media(max-width:768px){
-    width:50%;
+    width:450px;
   }
   @media(max-width:576px){
   
-  width:80%;
+    width:350px;
   margin:auto;
     }
     @media(max-width:426px){
@@ -345,7 +345,7 @@ const SmallMediaHandles = styled.div`
   padding-top: 30px;
   color: var(--mainOrange);
   font-weight: bold;
-  width:50%;
+  width:450px;;
   margin:auto;
   a {
     color: white;
@@ -361,7 +361,7 @@ const SmallMediaHandles = styled.div`
     display:none;
   }
   @media(max-width:576px){
-   width:80%;
+    width:350px;
  }
  @media(max-width:426px){
    width:100%;
