@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import AboutBanner from "../../assets/StandageAbout.png";
+import AboutBanner from "../../assets/Partner.png";
 import styled, { keyframes } from 'styled-components'
 import partner1 from "../../assets/partner/partner1.png";
 import partner2 from "../../assets/partner/partner2.png";
