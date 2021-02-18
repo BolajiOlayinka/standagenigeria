@@ -1,32 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import AboutBanner from "../../assets/StandageAbout.png";
-// import Check from '../../assets/check.png';
-// import Header from '../Header';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import pic0 from '../../assets/about1.jpg';
 import pic1 from '../../assets/about2.jpg';
-// import pic2 from '../../assets/about3.jpg';
-// import pic3 from '../../assets/about4.jpg';
 import pic4 from '../../assets/about5.jpg';
-// import pic5 from '../../assets/about6.jpg';
 import pic6 from '../../assets/about7.jpg';
 import pic7 from '../../assets/about8.jpg';
 
 export default function About() {
-  const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
-  // const [offsetTop, setOffsetTop] = useState(0)
-  const fixedScroll = () => {
-    if (window.pageYOffset >= 100) {
-    } else {
-    }
-  };
-  window.addEventListener("scroll", fixedScroll);
+  
   useEffect(() => {
     Aos.init(
       {
@@ -38,7 +24,7 @@ export default function About() {
   return (
     <React.Fragment>
  <BannerUnderlay>
-      {/* <Header/> */}
+    
       <Container>
         <BannerSection>
           <BannerHeading>
@@ -50,40 +36,7 @@ export default function About() {
             Importation of Japanese Products Across the World.
           </BannerSubHeading>
         </BannerSection>
-        {/* <ButtonSection>
-          <PlayButton onClick={toggle}>
-            Who are we ...
-            <FontAwesomeIcon className="ml-4" icon={faPlayCircle} />
-          </PlayButton>
-        </ButtonSection> */}
-
-        <Modal isOpen={modal} toggle={toggle}>
-          <ModalHeader toggle={toggle}></ModalHeader>
-          <ModalBody>
-            <div
-              className="video"
-              style={{
-                position: "relative",
-                paddingBottom: "56.25%",
-                paddingTop: 25,
-                height: 0,
-              }}
-            >
-              <iframe
-                title="youtube"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-                src="https://www.youtube.com/embed/TnR9O-d8nhY?autoplay=1&mute=1"
-                frameBorder="0"
-              />
-            </div>
-          </ModalBody>
-        </Modal>
+       
         <BannerJoiner data-aos="fade-up"></BannerJoiner>
       </Container>
       

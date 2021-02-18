@@ -9,8 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
-
-
 export default function Header() {
   const [background, setBackground] = useState("black");
   // const [offsetTop, setOffsetTop] = useState(0)
@@ -22,32 +20,26 @@ export default function Header() {
   // const [SmallBackground, setSmallBackground]=useState("black")
 
   const handleScroll = () => {
-    
     if (window.pageYOffset > 0) {
       setBackground("black");
-    } 
+    }
   };
   const fixedScroll = () => {
     if (window.pageYOffset >= 100) {
       setFixed("fixed");
-    
+
       // setMailPadding(105)
-     
     } else {
       setFixed("initial");
-     
-      // setMailPadding(20) 
-     
+
+      // setMailPadding(20)
     }
   };
   const ScrollDisplay = () => {
     if (window.pageYOffset >= 1300) {
       setDisplay("none");
-     
     } else {
       setDisplay("flex");
-    
-     
     }
   };
   window.addEventListener("scroll", handleScroll);
@@ -58,136 +50,81 @@ export default function Header() {
     setShowItem(!showItem, e);
     setShowIcon(!showIcon, e);
   };
-  
 
   return (
     <React.Fragment>
-        <NavWrapper background={background} fixed={fixed} display={display} >
-      <StyledNavbar expand="sm">
-        <div onClick={toggle} style={{ marginRight: "38px" }}>
-          {showIcon ? (
-            <StyledFontAwesome icon={faBars} />
-          ) : (
-            <StyledFontCancel icon={faTimesCircle} />
+      <NavWrapper background={background} fixed={fixed} display={display}>
+        <StyledNavbar expand="sm">
+          <div onClick={toggle} style={{ marginRight: "38px" }}>
+            {showIcon ? (
+              <StyledFontAwesome icon={faBars} />
+            ) : (
+              <StyledFontCancel icon={faTimesCircle} />
+            )}
+          </div>
+          <LogoContainer>
+            <Link to="/">
+              <img src={Logo} alt="Standage Logo" />
+            </Link>
+          </LogoContainer>
+          {showItem && (
+            <StyledNav navbar>
+              <NavItem>
+                <StyledLink to="/" onClick={toggle}>
+                  Home
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink to="/about" onClick={toggle}>
+                  About Us
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink to="/products" onClick={toggle}>
+                  Products
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink to="/news" onClick={toggle}>
+                  News
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink to="/partners" onClick={toggle}>
+                  Partners
+                </StyledLink>
+              </NavItem>
+            </StyledNav>
           )}
-        </div>
-        <LogoContainer>
-          <Link to="/">
-            <img src={Logo} alt="Standage Logo" />
-          </Link>
-        </LogoContainer>
-        {showItem && (
-          <StyledNav navbar>
-            <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/ja"
-                onClick={toggle}
-              >
-                Home
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/news"
-                onClick={toggle}
-              >
-                News
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink to="/news" onClick={toggle}>
-                Service
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/about"
-                onClick={toggle}
-              >
-                About Us
-              </StyledLink>
-            </NavItem>
-          </StyledNav>
-        )}
-        <LargeNav className="ml-auto">
-          <StyledNav navbar>
-            <NavItem>
-              <StyledLink to="/">Home</StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                activeclassname="selected"
-               
-                to="/about"
-              >
-                About Us
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                
-                to="/#digitrad"
-              >
-                Service
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-               
-                to="/news"
-              >
-                News
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                
-                to="/about"
-              >
-                Our Team
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <Link
-               
-                to=""
-              >
-                <img src={Email} alt="standage email"/>
-              </Link>
-            </NavItem>
-          </StyledNav>
-        </LargeNav>
-
-        {/* <div className="ml-auto">
-          <LanguageSwitcher />
-        </div> */}
-      </StyledNavbar>
-     
-    </NavWrapper>
-    
+          <LargeNav className="ml-auto">
+            <StyledNav navbar>
+              <NavItem>
+                <StyledLink to="/">Home</StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink activeclassname="selected" to="/about">
+                  About Us
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink to="/#digitrad">Products</StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink to="/news">News</StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink to="/partners">Partners</StyledLink>
+              </NavItem>
+              <NavItem>
+                <Link to="">
+                  <img src={Email} alt="standage email" />
+                </Link>
+              </NavItem>
+            </StyledNav>
+          </LargeNav>
+        </StyledNavbar>
+      </NavWrapper>
     </React.Fragment>
-
   );
 }
 
@@ -201,14 +138,14 @@ const NavWrapper = styled.div`
   background: ${(props) => props.background} !important;
   transition: 2s all;
   width: -webkit-fill-available;
-  
+
   @media (max-width: 576px) {
     background-color: rgba(0, 0, 0, 0.8);
   }
 `;
 
 const LogoContainer = styled.div`
-  ${'' /* img {
+  ${"" /* img {
     width: 150px;
     height: 38px;
   } */}
@@ -247,8 +184,8 @@ const StyledLink = styled(Link)`
   margin-right: 33px;
   padding-bottom: 8px;
   font-size: 15px;
-  font-weight:bold;
-  
+  font-weight: bold;
+
   :hover {
     color: #f8951d;
     cursor: pointer;
@@ -281,7 +218,7 @@ const StyledLink = styled(Link)`
 `;
 
 const LargeNav = styled.div`
-display:flex;
+  display: flex;
   @media (min-width: 768px) {
     display: block;
   }
@@ -306,4 +243,3 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
   margin-left: -2px;
   font-size: 24px;
 `;
-
