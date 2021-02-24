@@ -1,0 +1,12 @@
+.App {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+:root{
+  --mainWhite:white;
+  --mainOrange:#F09A37;
+  --mainAsh:#F2F0EB;
+  --mainBlack:#212529;
+  --lightBlue:#0F5E5E;
+  --lightOrange:#F2F0EB;
+}
